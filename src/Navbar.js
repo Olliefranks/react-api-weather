@@ -5,7 +5,7 @@ export default function Navbar() {
         Weather App
       </a>
       <ul>
-        <li>
+        <li className="active">
           <a href="/about">About</a>
         </li>
       </ul>

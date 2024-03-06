@@ -1,12 +1,24 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./Navbar";
+import About from "./pages/About";
 
 const api = {
   key: "faefc15ce17a74c78f8bc24e1f2d2e86",
   base: "http://api.openweathermap.org/data/2.5/",
 };
 function App() {
+  let component;
+  switch (window.location.pathname) {
+    case "/":
+      component = <defaulComponent />;
+      break;
+    case "/about":
+      component = <About />;
+      break;
+    default:
+      break;
+  }
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState({});
   const searchPressed = () => {
@@ -19,6 +31,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <div className="container">{component}</div>
 
       <div className="App">
         <header className="App-header">
